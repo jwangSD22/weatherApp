@@ -6,7 +6,7 @@ export default function pullData(e) {
     
     
     let getGeocode = async function (query){
-        let getOW = await fetch (`http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=6e392d3485c73601214cf793446bf26c`,{mode:'cors'})
+        let getOW = await fetch (`https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=6e392d3485c73601214cf793446bf26c`,{mode:'cors'})
         let data =  await getOW.json();
     
         

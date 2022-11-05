@@ -13,6 +13,6 @@ export default async function getWeather (lat,lon){
         data.main.feels_like,
         data.weather[0].description,
         data.timezone])
-        weatherIcon.setAttribute("src",`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
+        weatherIcon.setAttribute("src",`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
         tempDisplay.textContent = `${format(new Date().getTime()-booty+(data.timezone*1000),'PPpp')}`
 }
