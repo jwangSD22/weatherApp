@@ -1,4 +1,5 @@
 import { format } from 'date-fns'
+import {resetField} from '/src/parseQuery'
 
 let booty = format(new Date().getTime(),'X')*60*60*1000
 
@@ -14,5 +15,22 @@ export default async function getWeather (lat,lon){
         data.weather[0].description,
         data.timezone])
         weatherIcon.setAttribute("src",`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
-        tempDisplay.textContent = `${format(new Date().getTime()-booty+(data.timezone*1000),'PPpp')}`
+        tempDisplay.textContent = `${format(new Date().getTime()-booty+(data.timezone*1000),'p')}`
+        
+    
+
+
+
+
+        toggleOn();
+        resetField();
+
+
+}
+
+let toggleOn = function(){
+    let getEle = document.querySelectorAll('.toggle')
+    console.log(getEle);
+    getEle.forEach((e)=>e.style.display='flex')
+
 }

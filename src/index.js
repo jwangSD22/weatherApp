@@ -2,7 +2,7 @@
 import "./styles.css"
 import getWeather from '/src/getWeather'
 import pullData from '/src/parseQuery'
-
+import "./outerContainers.css"
 
 
 
@@ -12,12 +12,15 @@ window.document.addEventListener(
 const queryForm = document.getElementById('queryForm');
 const queryField = document.getElementById('queryField');
 const submitButton = document.getElementById('submitButton');
-const display = document.getElementById('display')
-const tempDisplay = document.getElementById('tempDisplay')
-const weatherIcon = document.getElementById('weatherIcon')
+const display = document.getElementById('display');
+const tempDisplay = document.getElementById('tempDisplay');
+const weatherIcon = document.getElementById('weatherIcon');
+const locationDisplay = document.getElementById('locationDisplay');
 queryForm.addEventListener('submit',pullData)
 window.getWeather = getWeather
+
 })
+
 
 
 

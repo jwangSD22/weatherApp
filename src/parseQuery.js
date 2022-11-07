@@ -14,11 +14,40 @@ export default function pullData(e) {
         display.removeChild(display.firstChild)
     }
     
-        display.innerHTML = `<div id="resultHeader">Did you mean</div>`
+        display.innerHTML = `<span id="resultHeader">Did you mean</span>`
         for (let i=0;i<data.length;i++){
            console.log(data[i])
-            display.innerHTML += `<div id="resultContainer"
-           onclick="getWeather(${data[i].lat},${data[i].lon})">
-           ${data[i].name}, ${data[i].state}, ${data[i].country}</div>`
+            display.innerHTML += `<span id="resultContainer"
+           onclick="getWeather(${data[i].lat},${data[i].lon})" country ="${data[i].name}, ${data[i].state}, ${data[i].country}">
+           ${data[i].name}, ${data[i].state}, ${data[i].country}</span>`
         }
+        display.innerHTML+=`<span id="newQuery">New Search</span>`
+        submitButton.style.display='none'
+        const newQuery = document.getElementById('newQuery')
+        newQuery.addEventListener('click',resetToggle)
     }
+
+function resetToggle (){
+    resetField();
+    toggleOff();
+}
+
+
+    function resetField(){
+        while (display.firstChild){
+            display.removeChild(display.firstChild)
+        }
+        submitButton.style.display='flex'
+       
+        queryForm.reset();
+
+    }
+
+    let toggleOff = function(){
+        let getEle = document.querySelectorAll('.toggle')
+        console.log(getEle);
+        getEle.forEach((e)=>e.style.display='none')
+    
+    }
+
+  export {resetField}

@@ -1,11 +1,112 @@
+body{
+   display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height:100%;
+  width:100%;
+}
 
+#container{
+  border: solid red 1px;
+  display:flex;
+  flex-direction: column;
+   justify-content: center;
+  align-items: center;
+  width:600px;
+  height:70%;
+}
+#topContainer{
+  display:flex;
+  background-color: rgb(191, 253, 183);
+  width:100%;
+
+  flex:10;
+}
+
+
+
+#queryContainer{
+  display:flex;
+  flex-direction: column;;
+  justify-content: Center;
+  align-items: center;
+  background-color: rgb(185, 216, 245);
+  width:100%;
+  flex:10;
+  flex-direction: column;
+}
+
+#bottomContainer{
+  display:flex;
+  flex-direction: column;
+  background-color: rgb(244, 222, 202);
+width:100%;
+  flex:10;
+}
+
+#footer{
+  display:flex;
+  background-color: rgb(226, 202, 248);
+  flex:1;
+  width:100%;
+
+}
+#locationDisplay{
+  position:absolute;
+  padding-bottom: 5%;
+}
+
+#topRow {
+  display:flex;
+  position:relative
+}
+
+#queryForm{
+  display:flex;
+  align-items: center;
+  width:100%;
+}
+#queryField{
+  display:flex;
+  flex:1;
+  width:100%;
+}
+
+#display{
+  width:inherit;
+}
+
+
+
+#results{
+  background-color: gray;
+  width:100%;
+}
+#resultHeader{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border:solid 1px rgb(146, 249, 98);
+  width:100%;
+  flex-wrap: wrap;
+}
 #resultContainer{
     display:flex;
     justify-content: center;
-    align-items: center;;
-  border:solid 2px red;
-  width:300px;
-  height: 50px;  
+    align-items: center;
+  border:solid 1px rgb(238, 155, 155);
+  width:100%;
+  flex-wrap: wrap;
+}
+#newQuery{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border:solid 1px rgb(146, 249, 98);
+  width:100%;
+  flex-wrap: wrap;
 }
 
 #resultContainer:hover{
