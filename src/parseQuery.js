@@ -1,4 +1,5 @@
 import { masterWeather } from "./masterWeather";
+import { resetToggle } from "./helperFxns";
 
 export default function pullData(e) {
   let queryData = queryField.value;
@@ -52,24 +53,3 @@ else{
 
 }
 }
-
-function resetToggle() {
-  resetField();
-  toggleOff();
-}
-
-function resetField() {
-  while (display.firstChild) {
-    display.removeChild(display.firstChild);
-  }
-  submitButton.style.display = "flex";
-  
-  queryForm.reset();
-}
-
-let toggleOff = function () {
-  let getEle = document.querySelectorAll(".toggle");
-  getEle.forEach((e) => (e.style.display = "none"));
-};
-
-export { resetField, toggleOff };

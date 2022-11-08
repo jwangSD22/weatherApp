@@ -1,8 +1,5 @@
-import { format } from "date-fns";
+import { toggleOn,resetField } from "./helperFxns";
 import { masterWeather } from "./masterWeather";
-import { resetField } from "/src/parseQuery";
-
-let booty = format(new Date().getTime(), "X") * 60 * 60 * 1000;
 
 export default async function getWeather(lat, lon) {
   let getOW = await fetch(
@@ -32,10 +29,9 @@ export default async function getWeather(lat, lon) {
   resetField();
 }
 
-let toggleOn = function () {
-  let getEle = document.querySelectorAll(".toggle");
-  getEle.forEach((e) => (e.style.display = "flex"));
-};
+
+
+
 
 function convertCase(text){
 let myText = text

@@ -3,7 +3,7 @@ import "./styles.css";
 import getWeather from "/src/getWeather";
 import pullData from "/src/parseQuery";
 import "./outerContainers.css";
-import { toggleOff } from "./parseQuery";
+import { toggleOff } from "./helperFxns";
 
 window.document.addEventListener("DOMContentLoaded", () => {
   const queryForm = document.getElementById("queryForm");

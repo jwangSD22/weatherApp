@@ -1,6 +1,6 @@
 #innerHeader{
     color:rgb(191, 214, 234);
-    font-weight: bold;
+    font-weight:100;
 }
 
 #innerContent{
@@ -70,6 +70,8 @@ flex:1
 
 #weatherDesc{
     display:flex;
+    font-size:2rem;
+    font-weight:bold;
     justify-content: space-evenly;
     align-items: center;
     flex:2;

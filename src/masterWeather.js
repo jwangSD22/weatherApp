@@ -59,17 +59,17 @@ let masterWeather = {
       new Date().getTime() - localTz + this.timezone * 1000,
       "p"
     )}`;
-    document.getElementById("wind").innerHTML = `<span><img src="/src/wind.svg" class="logo"></span><span id="innerHeader">Wind Speed</span><span id="innerContent">
+    document.getElementById("wind").innerHTML = `<span><img src="/src/svg/wind.svg" class="logo"></span><span id="innerHeader">Wind Speed</span><span id="innerContent">
       ${(
         this.wind * 2.237
       ).toFixed(1)}MPH-${degreeCalc(masterWeather.degree)}
     </span>`;
     document.getElementById(
       "humidity"
-    ).innerHTML = `<span><img src="/src/humidity.svg" class="logo"></span><span id="innerHeader">Humidity:</span><span id="innerContent">${this.humidity}%</span>`;
+    ).innerHTML = `<span><img src="/src/svg/humidity.svg" class="logo"></span><span id="innerHeader">Humidity:</span><span id="innerContent">${this.humidity}%</span>`;
     document.getElementById(
       "pressure"
-    ).innerHTML = `<span><img src="/src/pressure.svg" class="logo"></span><span id="innerHeader">Pressure</span><span id="innerContent">${this.pressure} hpA</span>`;
+    ).innerHTML = `<span><img src="/src/svg/pressure.svg" class="logo"></span><span id="innerHeader">Pressure</span><span id="innerContent">${this.pressure} hpA</span>`;
     document.getElementById("locationDisplay").innerHTML = `${this.fullName}`;
     document.getElementById("tempToggle").addEventListener("click", toggler);
   },
