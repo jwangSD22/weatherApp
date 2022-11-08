@@ -50,4 +50,4 @@ function resetToggle (){
     
     }
 
-  export {resetField}
+  export {resetField,toggleOff}

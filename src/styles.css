@@ -115,3 +115,24 @@ width:100%;
     color:red;
     cursor:grab;
 }
+
+#tempToggle {
+  border: solid 2px red;
+  width:70px;
+  display:flex;
+  justify-content: center;
+  height:40px;
+  align-items: center;
+
+}
+
+#tempToggle:hover{
+  background-color:brown;
+  cursor:grab;
+}
+
+#toggleDiv{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}

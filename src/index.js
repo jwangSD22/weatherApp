@@ -3,7 +3,9 @@ import "./styles.css"
 import getWeather from '/src/getWeather'
 import pullData from '/src/parseQuery'
 import "./outerContainers.css"
-
+import {masterWeather} from '/src/masterWeather'
+import { format } from 'date-fns'
+import { toggleOff } from "./parseQuery"
 
 
 window.document.addEventListener(
@@ -18,7 +20,8 @@ const weatherIcon = document.getElementById('weatherIcon');
 const locationDisplay = document.getElementById('locationDisplay');
 queryForm.addEventListener('submit',pullData)
 window.getWeather = getWeather
-
+window.masterWeather = masterWeather;
+toggleOff();
 })
 
 
