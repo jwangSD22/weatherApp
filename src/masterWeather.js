@@ -24,41 +24,53 @@ let masterWeather = {
     document.getElementById("mainTemp").innerHTML = `${convert(
       this.mainTemp
     )}°${this.tempToggle}`;
-    document.getElementById("max").innerHTML = `Max:${convert(this.max)}°${
-      this.tempToggle
-    }`;
-    document.getElementById("min").innerHTML = `Min:${convert(this.min)}°${
-      this.tempToggle
-    }`;
-    document.getElementById("feelsLike").innerHTML = `Feels Like: ${convert(
-      this.mainTemp
-    )}°${this.tempToggle}`;
+    document.getElementById("max").innerHTML = `<span id="innerHeader">Max</span><span id="innerContent">
+      ${convert(this.max)}°${
+        this.tempToggle
+      }
+    </span>`;
+    document.getElementById("min").innerHTML = `<span id="innerHeader">Min</span><span id="innerContent">
+      ${convert(this.min)}°${
+        this.tempToggle
+      }
+    </span>`;
+    document.getElementById("feelsLike").innerHTML = `<span id="innerHeader">Feels Like</span><span id="innerContent">
+      ${convert(
+        this.mainTemp
+      )}°${this.tempToggle}
+    </span>`;
     document.getElementById("description").innerHTML = this.description;
     document.getElementById(
       "icon"
     ).innerHTML = `<img src="https://openweathermap.org/img/wn/${this.icon}@2x.png">`;
-    document.getElementById("rise").innerHTML = `Sunrise: ${format(
-      this.rise * 1000 - localTz + this.timezone * 1000,
-      "p"
-    )}`;
-    document.getElementById("set").innerHTML = `Sunset: ${format(
-      this.set * 1000 - localTz + this.timezone * 1000,
-      "p"
-    )}`;
+    document.getElementById("rise").innerHTML = `<span id="innerHeader">Sunrise</span><span id="innerContent">
+      ${format(
+        this.rise * 1000 - localTz + this.timezone * 1000,
+        "p"
+      )}
+    </span>`;
+    document.getElementById("set").innerHTML = `<span id="innerHeader">Sunset</span> <span id="innerContent">
+      ${format(
+        this.set * 1000 - localTz + this.timezone * 1000,
+        "p"
+      )}
+    </span>`;
     document.getElementById("localTime").innerHTML = `Local Time: ${format(
       new Date().getTime() - localTz + this.timezone * 1000,
       "p"
     )}`;
-    document.getElementById("wind").innerHTML = `Wind:${(
-      this.wind * 2.237
-    ).toFixed(1)}MPH`;
+    document.getElementById("wind").innerHTML = `<span><img src="/src/wind.svg" class="logo"></span><span id="innerHeader">Wind Speed</span><span id="innerContent">
+      ${(
+        this.wind * 2.237
+      ).toFixed(1)}MPH-${degreeCalc(masterWeather.degree)}
+    </span>`;
     document.getElementById(
       "humidity"
-    ).innerHTML = `Humidity:${this.humidity}%`;
+    ).innerHTML = `<span><img src="/src/humidity.svg" class="logo"></span><span id="innerHeader">Humidity:</span><span id="innerContent">${this.humidity}%</span>`;
     document.getElementById(
       "pressure"
-    ).innerHTML = `Pressure:${this.pressure} hpA`;
-    document.getElementById("locationDisplay").textContent = `${this.fullName}`;
+    ).innerHTML = `<span><img src="/src/pressure.svg" class="logo"></span><span id="innerHeader">Pressure</span><span id="innerContent">${this.pressure} hpA</span>`;
+    document.getElementById("locationDisplay").innerHTML = `${this.fullName}`;
     document.getElementById("tempToggle").addEventListener("click", toggler);
   },
 };
@@ -78,6 +90,13 @@ function toggler() {
     masterWeather.tempToggle = "F";
   }
   masterWeather.publish();
+}
+
+function degreeCalc(degree) {
+  let directions = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"]
+  let calc = Math.floor(degree/22.5);
+  return directions[calc]
+
 }
 
 export { masterWeather };

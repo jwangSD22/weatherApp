@@ -1,5 +1,21 @@
+a, a:visited, a:active {
+  color: inherit;
+  text-decoration:inherit;
+}
+
+a:hover{
+  background-color: #EA4492;
+}
+  
+img {
+  display:inline;
+}
+
 body{
-   display:flex;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #041B2D;
+  color:white;
+  display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -9,7 +25,9 @@ body{
 }
 
 #container{
-  border: solid red 1px;
+  padding:10px;
+  background-image: linear-gradient(#004E9A,#428CD4);
+  border-radius: 5%;
   display:flex;
   flex-direction: column;
    justify-content: center;
@@ -18,8 +36,8 @@ body{
   height:70%;
 }
 #topContainer{
+  
   display:flex;
-  background-color: rgb(191, 253, 183);
   width:100%;
 
   flex:10;
@@ -32,7 +50,6 @@ body{
   flex-direction: column;;
   justify-content: Center;
   align-items: center;
-  background-color: rgb(185, 216, 245);
   width:100%;
   flex:7;
   flex-direction: column;
@@ -41,22 +58,20 @@ body{
 #bottomContainer{
   display:flex;
   flex-direction: column;
-  background-color: rgb(244, 222, 202);
 width:100%;
   flex:10;
 }
 
 #footer{
   display:flex;
-  background-color: rgb(226, 202, 248);
   flex:1;
   width:100%;
 
 }
 #locationDisplay{
   position:absolute;
-  padding-bottom: 10%;
   font-size: 2rem;
+  flex:wrap;
 }
 
 #topRow {

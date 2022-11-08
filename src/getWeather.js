@@ -16,7 +16,7 @@ export default async function getWeather(lat, lon) {
   masterWeather.max = data.main.temp_max;
   masterWeather.min = data.main.temp_min;
   masterWeather.feelsLike = data.main.feels_like;
-  masterWeather.description = data.weather[0].description;
+  masterWeather.description = convertCase(data.weather[0].description);
   masterWeather.icon = data.weather[0].icon;
   masterWeather.rise = data.sys.sunrise;
   masterWeather.set = data.sys.sunset;
@@ -36,3 +36,12 @@ let toggleOn = function () {
   let getEle = document.querySelectorAll(".toggle");
   getEle.forEach((e) => (e.style.display = "flex"));
 };
+
+function convertCase(text){
+let myText = text
+return myText.toLowerCase()
+.split(' ')
+.map((x)=>x.charAt(0).toUpperCase()+x.substring(1))
+.join(' ');
+}
+
