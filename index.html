@@ -8,14 +8,58 @@
     <script src="main.js"></script>
 </head>
 <body>
+    
     <div id="container">
-        <form id="queryForm">
-        <input type="text" id="queryField" placeholder="city, state, country">
-        <input type="submit" id="submitButton">
-        </form>
+        <div id="topContainer">
+            <div  id="topLeft">
+                <div id="tempContainer">
+                    <div  class ="toggle" id="mainTemp">mainTemp</div>
+                    <div  class ="toggle" id="minMax">
+                        <div id="max">max</div>
+                        <div id="min">min</div>
+                    </div>
+                </div>
+                <div id="tempChanger">
+<div  class ="toggle" id = "toggleDiv"> <span id = "tempToggle"> F°/C° </span></div>
+                    <div  class ="toggle" id="feelsLike">feelsLike</div>
+                </div>
+            </div>
+            <div id="topRight">
+                <div  class ="toggle" id="weatherDesc">
+                    <div id="description">description</div>
+                    <div id="icon">icon</div>
+                </div>
+                <div  class ="toggle" id="riseSet">
+                    <div id="rise">rise</div>
+                    <div id="set">set</div>
+                </div>
+            </div>
+        </div>
+        <div id="queryContainer">
+            
+            <div id="locationDisplay"></div>
+            <div id="topRow">
+                <form id="queryForm"> 
+                <input type="text" id="queryField" autocomplete="off" placeholder="city, state, country">
+                <input type="submit" id="submitButton">
+            </form>
+            
+            </div>
+            <span id="display"></span>
+                    
+           </div>
+           <div  id="bottomContainer">
+            <div  class ="toggle" id="localTime">localTime</div>
+            <div  id="otherWeather">
+                <div  class ="toggle" id="wind">wind</div>
+                <div  class ="toggle" id="humidity">humidity</div>
+                <div  class ="toggle" id="pressure">pressure</div>
+            </div>
+           </div>
+        <div id="footer">created by Jack Wang gitHub /// API from openweather</div>
     </div>
 
-    <div id="display"></div>
+    
     <div id="tempDisplay"></div>
     <img id="weatherIcon" src="">
     
