@@ -1,5 +1,10 @@
 import { ktoC, ktoF } from "/src/tempConversion";
 import { format } from "date-fns";
+import humidity from "./svg/humidity.svg"
+import pressure from "./svg/pressure.svg"
+import wind from "./svg/wind.svg"
+
+
 let localTz = format(new Date().getTime(), "X") * 60 * 60 * 1000;
 
 let masterWeather = {
@@ -19,6 +24,10 @@ let masterWeather = {
   pressure: "",
   timezone: "",
   fullName: "",
+
+  test: function () {
+    console.log(humidity)
+  },
 
   publish: function () {
     document.getElementById("mainTemp").innerHTML = `${convert(
@@ -59,17 +68,17 @@ let masterWeather = {
       new Date().getTime() - localTz + this.timezone * 1000,
       "p"
     )}`;
-    document.getElementById("wind").innerHTML = `<span><img src="/src/svg/wind.svg" class="logo"></span><span id="innerHeader">Wind Speed</span><span id="innerContent">
+    document.getElementById("wind").innerHTML = `<span><img src="${wind}" class="logo"></span><span id="innerHeader">Wind Speed</span><span id="innerContent">
       ${(
         this.wind * 2.237
       ).toFixed(1)}MPH-${degreeCalc(masterWeather.degree)}
     </span>`;
     document.getElementById(
       "humidity"
-    ).innerHTML = `<span><img src="/src/svg/humidity.svg" class="logo"></span><span id="innerHeader">Humidity:</span><span id="innerContent">${this.humidity}%</span>`;
+    ).innerHTML = `<span><img src="${humidity}" class="logo"></span><span id="innerHeader">Humidity:</span><span id="innerContent">${this.humidity}%</span>`;
     document.getElementById(
       "pressure"
-    ).innerHTML = `<span><img src="/src/svg/pressure.svg" class="logo"></span><span id="innerHeader">Pressure</span><span id="innerContent">${this.pressure} hpA</span>`;
+    ).innerHTML = `<span><img src="${pressure}" class="logo"></span><span id="innerHeader">Pressure</span><span id="innerContent">${this.pressure} hpA</span>`;
     document.getElementById("locationDisplay").innerHTML = `${this.fullName}`;
     document.getElementById("tempToggle").addEventListener("click", toggler);
   },

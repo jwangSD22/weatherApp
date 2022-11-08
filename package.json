@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/jwangSD22/weatherApp#readme",
   "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
     "css-loader": "^6.7.1",
     "gh-pages": "^4.0.0",
+    "html-loader": "^4.2.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
     "webpack-bundle-analyzer": "^4.7.0",

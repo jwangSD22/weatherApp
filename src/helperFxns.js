@@ -1,6 +1,6 @@
 let toggleOn = function () {
     let getEle = document.querySelectorAll(".toggle");
-    getEle.forEach((e) => {e.style.display = "flex"; e.style.opacity = "1";e.style.transition="opacity 0.5s ease-in-out"});
+    getEle.forEach((e) => {e.style.display = "flex"});
   };
 
   let toggleOff = function () {

@@ -4,6 +4,7 @@ import getWeather from "/src/getWeather";
 import pullData from "/src/parseQuery";
 import "./css/outerContainers.css";
 import { toggleOff } from "./helperFxns";
+import { masterWeather } from "./masterWeather";
 
 window.document.addEventListener("DOMContentLoaded", () => {
   const queryForm = document.getElementById("queryForm");
@@ -15,5 +16,6 @@ window.document.addEventListener("DOMContentLoaded", () => {
   const locationDisplay = document.getElementById("locationDisplay");
   queryForm.addEventListener("submit", pullData);
   window.getWeather = getWeather;
+  window.masterWeather = masterWeather;
   toggleOff();
 });
