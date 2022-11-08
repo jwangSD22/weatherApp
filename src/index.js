@@ -1,8 +1,8 @@
 //openweather API - 6e392d3485c73601214cf793446bf26c
-import "./styles.css";
+import "./css/styles.css";
 import getWeather from "/src/getWeather";
 import pullData from "/src/parseQuery";
-import "./outerContainers.css";
+import "./css/outerContainers.css";
 import { toggleOff } from "./helperFxns";
 
 window.document.addEventListener("DOMContentLoaded", () => {
