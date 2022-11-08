@@ -34,7 +34,7 @@ body{
   align-items: center;
   background-color: rgb(185, 216, 245);
   width:100%;
-  flex:10;
+  flex:7;
   flex-direction: column;
 }
 
@@ -55,12 +55,15 @@ width:100%;
 }
 #locationDisplay{
   position:absolute;
-  padding-bottom: 5%;
+  padding-bottom: 10%;
+  font-size: 2rem;
 }
 
 #topRow {
   display:flex;
-  position:relative
+  flex-direction: column;
+  position:relative;
+  width:300px;
 }
 
 #queryForm{
@@ -68,11 +71,25 @@ width:100%;
   align-items: center;
   width:100%;
 }
+/* text input field styling*/
 #queryField{
+  
   display:flex;
   flex:1;
   width:100%;
+  border:0;
+  }
+
+
+
+#newQuery:hover{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: aquamarine;
+  color:red;
+  cursor:grab;
 }
+
+
 
 #display{
   width:inherit;
